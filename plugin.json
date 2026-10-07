@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "upstream-watch",
+  "version": "0.1.0",
+  "description": "Check upstream Git changes during Codex sessions without merging or changing working files.",
+  "author": { "name": "mertcandrks" },
+  "license": "MIT",
+  "repository": "https://github.com/mertcandrks/codex-upstream-watch",
+  "extensions": {
+    "com.openai": {
+      "hooks": "./hooks/hooks.json",
+      "interface": {
+        "displayName": "Upstream Watch",
+        "shortDescription": "Notice relevant upstream changes before duplicating work",
+        "developerName": "mertcandrks",
+        "category": "Developer tools",
+        "capabilities": ["Read", "Lifecycle hooks"],
+        "defaultPrompt": ["Use upstream-check to check whether upstream already changed the code we are editing."]
+      }
+    }
+  }
+}
